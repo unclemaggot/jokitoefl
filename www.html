@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Joki TOEFL Landing</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Header gradient animation with transparency */
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(236,72,153,0.65), rgba(139,92,246,0.65), rgba(99,102,241,0.65));
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    z-index: -1;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+
+.pattern-harga{
+  background-color:rgba(255,255,255,0.05);      /* barely-there tint */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size:18px 18px;                    /* spacing of dots  */
+  backdrop-filter:blur(2px);                    /* softens pattern  */
+}
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background: url('https://files.catbox.moe/h9rlep.png') center/cover no-repeat;
+    z-index: -3;
+  }
+
+@keyframes shoot {
+  0%   { opacity:0; offset-distance:0%;   }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; offset-distance:100%; }
+}
+
+#stars-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* behind the card */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#hero-card {
+  position: relative;
+  z-index: 10; /* on top */
+  backdrop-filter: blur(2px);
+  background: rgba(0,0,0, 0.2);
+}
+
+.star-trail {
+  position: absolute;
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, white 0%, transparent 90%);
+  offset-rotate: auto;
+  opacity: 0.2; /* instead of 0, set a base opacity */
+  pointer-events: none;
+  animation: shoot 1.6s ease-in-out forwards;
+}
+img.rounded-full {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+</style>
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+
+<!-- -------------  HEADER / HERO ------------- -->
+<header class="relative py-32 flex flex-col justify-center items-center text-center px-4 sm:px-6 overflow-hidden">
+
+
+  <!-- Stars container behind the card -->
+  <div id="stars-container" class="absolute inset-0 z-0 pointer-events-none">
+  </div>
+
+  <!-- GLASS CARD -->
+  <div id="hero-card" class="relative bg-white/10 dark:bg-black/30 rounded-xl p-8 shadow-lg max-w-3xl">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+      Platform Joki TOEFL ITP, BUMN, CPNS, ELT/TKBI, EPT, Simak UI &amp; Semua Jenis Test Sejak 2019
+    </h1>
+    <a href="https://wa.me/6281234567890" target="_blank"
+       class="mt-6 inline-block bg-white text-indigo-600 font-semibold px-8 py-3 rounded-full shadow hover:scale-105 transition-transform">
+      Konsultasi via WhatsApp
+    </a>
+  </div>
+</header>
+  
+  <!-- About Section with isometric cube -->
+  <section class="py-28 px-4 sm:px-6 bg-black/30 dark:bg-black/50">
+    <div class="max-w-5xl mx-auto lg:flex lg:items-center lg:gap-8">
+      <div class="lg:w-1/2 space-y-6 text-center lg:text-left">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Tentang Kami</h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          jokitoefl.online merupakan platform yang menyediakan jasa joki TOEFL ITP, TOEFL BUMN, TOEFL CPNS, TOEFL ELT/TKBI, TOEFL EPT, Simak UI, dan semua jenis test TOEFL lainnya dengan jaminan skor diatas 500, jaminan kerahasiaan identitas, dan jaminan sertifikat asli. Kami juga menyediakan tempat untuk Joki TOEFL ITP yang bertempat di Bekasi.
+        </p>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg shadow-md font-semibold mt-4 flex items-center" role="alert">
+		  <span class="mr-2 text-xl">⚠️</span>
+		  Hati‐hati penipuan jasa joki murah di sosial media!
+		</div>
+      </div>
+      <div class="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
+        <!-- 3D isometric cube SVG -->
+        <svg class="w-2/4 h-auto" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+		  <path fill="#8B5CF6" d="M0,0 L110,50 L0,110 Z"/>
+		  <path fill="#7C3AED" d="M110,50 L220,0 L220,110 Z"/>
+		  <path fill="#6D28D9" d="M0,110 L110,170 L0,220 Z"/>
+		  <path fill="#4C1D95" d="M110,170 L220,110 L220,220 Z"/>
+		</svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent mx-auto max-w-2xl"></div>
+
+  <!-- Price List Section with static diagonal pattern -->
+  <section class="py-24 px-4 sm:px-6 pattern-harga bg-black/30 dark:bg-black/50">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-indigo-900 dark:text-indigo-200 mb-12">Daftar Harga</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- 6 cards restored -->
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow hover:shadow-lg transition">
+		 <img src="https://avatar.iran.liara.run/public"
+     alt="Partner 1"
+     class="mx-auto mb-4 w-24 h-24 square-full border-2 border-indigo-400 shadow object-cover">
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-4">TOEFL ITP</h3>
+          <p class="text-2xl font-bold text-indigo-600 mb-6">Rp 300.000</p>
+          <a href="https://wa.me/6281234567890" target="_blank"
+             class="block text-center bg-indigo-500 text-white py-3 rounded-full hover:bg-indigo-600 transition">
+            Konsultasi
+          </a>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-4">TOEFL BUMN</h3>
+          <p class="text-2xl font-bold text-indigo-600 mb-6">Rp 400.000</p>
+          <a href="https://wa.me/6281234567890" target="_blank"
+             class="block text-center bg-indigo-500 text-white py-3 rounded-full hover:bg-indigo-600 transition">
+            Konsultasi
+          </a>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-4">TOEFL CPNS</h3>
+          <p class="text-2xl font-bold text-indigo-600 mb-6">Rp 350.000</p>
+          <a href="https://wa.me/6281234567890" target="_blank"
+             class="block text-center bg-indigo-500 text-white py-3 rounded-full hover:bg-indigo-600 transition">
+            Konsultasi
+          </a>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-4">ELT/TKBI</h3>
+          <p class="text-2xl font-bold text-indigo-600 mb-6">Rp 320.000</p>
+          <a href="https://wa.me/6281234567890" target="_blank"
+             class="block text-center bg-indigo-500 text-white py-3 rounded-full hover:bg-indigo-600 transition">
+            Konsultasi
+          </a>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-4">EPT / Simak UI</h3>
+          <p class="text-2xl font-bold text-indigo-600 mb-6">Rp 450.000</p>
+          <a href="https://wa.me/6281234567890" target="_blank"
+             class="block text-center bg-indigo-500 text-white py-3 rounded-full hover:bg-indigo-600 transition">
+            Konsultasi
+          </a>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-4">TOEFL Kampus</h3>
+          <p class="text-2xl font-bold text-indigo-600 mb-6">Rp 300.000</p>
+          <a href="https://wa.me/6281234567890" target="_blank"
+             class="block text-center bg-indigo-500 text-white py-3 rounded-full hover:bg-indigo-600 transition">
+            Konsultasi
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section with isometric cube and new bg -->
+  <section class="py-16 px-4 sm:px-6 bg-gray-100/80 dark:bg-gray-800/80">
+    <div class="max-w-5xl mx-auto lg:flex lg:items-center lg:gap-8">
+      
+      <!-- Abstract SVG: Layered Circles -->
+		<div class="lg:w-2/6 flex justify-center mt-8 lg:mt-0">
+		  <svg class="w-auto h-1/1" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+			<defs>
+			  <linearGradient id="outerGradient" x1="0" y1="0" x2="1" y2="1">
+				<stop offset="0%" stop-color="#C084FC" />
+				<stop offset="100%" stop-color="#A855F7" />
+			  </linearGradient>
+			  <linearGradient id="innerGradient" x1="0" y1="0" x2="1" y2="1">
+				<stop offset="0%" stop-color="#6B21A8" />
+				<stop offset="100%" stop-color="#9333EA" />
+			  </linearGradient>
+			</defs>
+			<circle cx="150" cy="150" r="100" fill="url(#outerGradient)" />
+			<circle cx="200" cy="100" r="40" fill="url(#innerGradient)" />
+		  </svg>
+		</div>
+<div class="lg:w-4/6 space-y-6 text-center lg:text-left bg-white/10 dark:bg-white/5 p-6 rounded-xl backdrop-blur-md">
+  <h2 class="text-3xl font-bold text-purple-700 dark:text-purple-300">Partner Penjoki</h2>
+  <p class="text-gray-800 dark:text-gray-200 leading-relaxed">
+    Berikut ini adalah profil dari penjoki yang teraffiliasi dengan <span class="font-semibold">jokitoefl.online</span>. Pastikan kembali akun sosial partner penjoki kami sesuai dengan yang sudah kami cantumkan di bawah ini! 
+  </p>
+  <div class="bg-yellow-100 dark:bg-yellow-900/50 border-l-4 border-yellow-400 dark:border-yellow-500 text-yellow-800 dark:text-yellow-100 px-4 py-3 rounded-md shadow-sm">
+    ⚠️ Segala bentuk penipuan di luar akun di bawah ini bukan tanggung jawab kami!
+  </div>
+  <div class="grid gap-6 md:grid-cols-3">
+  <!-- Partner Card 1 -->
+  <div class="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+    <img src="https://avatar.iran.liara.run/public"
+     alt="Partner 1"
+     class="mx-auto mb-4 w-24 h-24 rounded-full border-2 border-indigo-400 shadow object-cover">
+    <h3 class="text-lg font-semibold text-white">Partner 1</h3>
+    <p class="text-sm text-gray-300 mt-1">X: @loremipsum</p>
+    <a href="https://x.com/loremipsum" target="_blank" class="mt-4 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full transition">
+      Chat
+    </a>
+  </div>
+
+  <!-- Partner Card 2 -->
+  <div class="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+    <img src="https://avatar.iran.liara.run/public"
+     alt="Partner 2"
+     class="mx-auto mb-4 w-24 h-24 rounded-full border-2 border-indigo-400 shadow object-cover">
+    <h3 class="text-lg font-semibold text-white">Partner 2</h3>
+    <p class="text-sm text-gray-300 mt-1">X: @loremipsum</p>
+    <a href="https://x.com/loremipsum" target="_blank" class="mt-4 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full transition">
+      Chat
+    </a>
+  </div>
+
+  <!-- Partner Card 3 -->
+  <div class="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
+    <img src="https://avatar.iran.liara.run/public"
+     alt="Partner 3"
+     class="mx-auto mb-4 w-24 h-24 rounded-full border-2 border-indigo-400 shadow object-cover">
+    <h3 class="text-lg font-semibold text-white">Partner 3</h3>
+    <p class="text-sm text-gray-300 mt-1">IG: @jokitoefl.online</p>
+    <a href="https://instagram.com/jokitoefl.online" target="_blank" class="mt-4 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full transition">
+      Chat
+    </a>
+  </div>
+</div>
+
+</div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-sm bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-400">
+    &copy; 2019–2025 jokitoefl.online. All rights reserved.
+  </footer>
+<!-- place just before </body> -->
+<script>
+const header = document.querySelector('header');
+const card   = document.getElementById('hero-card');
+const starsContainer = document.getElementById('stars-container');
+
+function spawn() {
+  const hRect = header.getBoundingClientRect();
+
+  const x = Math.random() * hRect.width;
+  const y = Math.random() * hRect.height;
+
+  const len = 120 + Math.random() * 120;
+  const path = `path("M${x},${y} l${len},${len * 0.6}")`;
+
+  const s = document.createElement('div');
+  s.className = 'star-trail';
+  s.style.offsetPath = path;
+  s.style.animation = `shoot ${1.6 + Math.random() * 1.4}s ease-in-out forwards`;
+
+  starsContainer.appendChild(s);
+  setTimeout(() => s.remove(), 3200);
+}
+
+setInterval(spawn, 400);
+</script>
+</body>
+</html>
